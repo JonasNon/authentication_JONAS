@@ -1,5 +1,6 @@
-1const axios = require('axios')
-const mysql = require('mysql')
+require('dotenv').config()
+const axios = require('axios')
+const mysql = require('mysql2')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const pool = require('../sql/connection')
@@ -25,9 +26,9 @@ const saltRounds = 10
 //   })
 // }
 
-const login = (req, res) => {
+const login = (req, res) => { // why doesnt this login properly???????? Error 403???????
   const { username, password } = req.body
-
+  console.log(username, password)
   axios(`https://${process.env.AUTH0_DOMAIN}/oauth/token`, {
     method: 'POST',
     headers: {

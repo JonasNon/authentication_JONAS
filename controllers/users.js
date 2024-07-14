@@ -1,4 +1,5 @@
-const mysql = require('mysql')
+require('dotenv').config()
+const mysql = require('mysql2')
 const pool = require('../sql/connection')
 const { handleSQLError } = require('../sql/error')
 
@@ -23,7 +24,6 @@ const createUser = (req, res) => {
   const { firstName, lastName } = req.body
   let sql = "INSERT INTO users (first_name, last_name) VALUES (?, ?)"
   sql = mysql.format(sql, [ firstName, lastName ])
-
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err)
     return res.json({ newId: results.insertId });

@@ -1,3 +1,4 @@
+require('dotenv').config()
 const jwksRsa = require('jwks-rsa');
 const jwt = require('express-jwt');
 
@@ -15,6 +16,7 @@ const checkJwt = jwt({
   issuer: `https://${process.env.AUTH0_DOMAIN}/`,
   algorithms: ['RS256']
 });
+
 
 module.exports = {
   logger,

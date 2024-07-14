@@ -141,8 +141,8 @@ Remember this information because we are about to use it again. This time go to 
 
 ```json
 {
-    "username": "test@example.com",
-    "password": "Password!"
+    "username": "officialJonasN@gmail.com",
+    "password": "aStrongPassword!"
 }
 ```
 
