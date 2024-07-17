@@ -35,7 +35,7 @@ const login = (req, res) => { // why doesnt this login properly???????? Error 40
       'content-type': 'application/json'
     },
     data: {
-      grant_type: 'password',
+      grant_type: 'client_credentials',
       username: username,
       password: password,
       audience: process.env.AUTH0_IDENTITY,
